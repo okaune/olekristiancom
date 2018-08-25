@@ -37,8 +37,8 @@ jobs:
       #- run: yarn test
 
       - add_ssh_keys:
-      fingerprints:
-        - "63:05:c1:45:d7:9b:a0:77:80:ea:8c:d2:6b:82:4a:03"
+        fingerprints:
+          - "63:05:c1:45:d7:9b:a0:77:80:ea:8c:d2:6b:82:4a:03"
 
       # Build website
       - run: yarn build
