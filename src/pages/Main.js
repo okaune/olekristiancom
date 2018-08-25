@@ -21,6 +21,7 @@ const Main = props => {
           Fikk tidlig interesse for datamaskiner, og laget min første nettside da jeg gikk i 6. klasse.
           Derfra har interessen bare økt, og jeg prøver aktivt å holde meg oppdatert på alt det nye som skjer i bransjen.
         </p>
+        
       </section>
       <section id="resume" className="resume">
         <h1>CV</h1>
