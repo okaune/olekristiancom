@@ -36,6 +36,9 @@ jobs:
       - run: yarn build
 
   deploy:
+    machine:
+      enabled: true
+    working_directory: ~/repo
     steps:
       - run: scp -r build/* olekristian@login.domeneshop.no:/www
 
