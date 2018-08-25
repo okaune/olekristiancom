@@ -32,27 +32,18 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
-      #- run: yarn test
 
       - run: yarn build
 
   deploy:
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "63:05:c1:45:d7:9b:a0:77:80:ea:8c:d2:6b:82:4a:03"
       - run: scp -r build/* olekristian@login.domeneshop.no:/www
 
 workflows:
   version: 2
-  build-and-deploy:
+  build-test-and-approval-deploy:
     jobs:
       - build
       - deploy:
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
+          requires:
+            - build
