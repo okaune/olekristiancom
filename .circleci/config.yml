@@ -38,6 +38,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn build
+      - run: ssh-keyscan -H login.domeneshop.no >> ~/.ssh/known_hosts 
       - run: scp -r build/* olekristian@login.domeneshop.no:/www
       
 
