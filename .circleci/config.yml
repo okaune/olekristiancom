@@ -34,6 +34,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn build
+      - add_ssh_keys:
+        fingerprints:
+          - "35:3b:27:78:5e:d7:c5:71:71:fd:a2:bc:2e:8d:3c:a0"
       - run: scp -r build/* olekristian@login.domeneshop.no:/www
       
 
