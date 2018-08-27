@@ -39,7 +39,7 @@ jobs:
 
       - run: yarn build
       - run: ssh-keyscan -H login.domeneshop.no >> ~/.ssh/known_hosts 
-      - run: scp -r build/* olekristian@login.domeneshop.no
+      - run: scp -r build/* olekristian@login.domeneshop.no:~/www/
       
 
 workflows:
