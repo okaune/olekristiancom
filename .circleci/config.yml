@@ -40,7 +40,7 @@ jobs:
       enabled: true
     working_directory: ~/repo
     steps:
-      - run: scp -r build/* olekristian@login.domeneshop.no:/www
+      - run: scp -r ~/repo/build/* olekristian@login.domeneshop.no:/www
 
 workflows:
   version: 2
