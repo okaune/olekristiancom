@@ -16,12 +16,12 @@ const Main = props => {
       <section id="about">
         <h1>Om meg</h1>
         <p>
-          Jeg er en aktiv student på {new Date().getFullYear() - 1995} år som elsker å engasjere meg.
+          Jeg er en student på {new Date().getFullYear() - 1995} år som elsker å engasjere meg.
           Er med på å arrangere alt fra sosiale arrangementer til kurs, og er veldig opptatt av å arbeide for godt samhold mellom studentene.
           Fikk tidlig interesse for datamaskiner, og laget min første nettside da jeg gikk i 6. klasse.
           Derfra har interessen bare økt, og jeg prøver aktivt å holde meg oppdatert på alt det nye som skjer i bransjen.
         </p>
-        
+
       </section>
       <section id="resume" className="resume">
         <h1>CV</h1>
