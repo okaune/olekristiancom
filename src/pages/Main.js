@@ -1,7 +1,7 @@
 import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import differenceInYears from 'date-fns/difference_in_years'
+import differenceInYears from 'date-fns/difference_in_years';
 
 import ResumeBlock from '../components/ResumeBlock';
 
