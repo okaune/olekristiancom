@@ -29,7 +29,7 @@ const initialState = {
     {
       title: 'Konsulent',
       location: 'Kantega',
-      description: 'Jobber med Kantega Singe Sign-on',
+      description: 'Full-stack utvikler på Kantega Singe Sign-on.',
       period: '2018-nå'
     },
     {
