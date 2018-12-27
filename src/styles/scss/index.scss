@@ -1,5 +1,14 @@
+:root {
+  --primary: #D42845;
+  --black: #040404;
+  --gray: #828282;
+  --light-gray: #F0F0F0;
+  --white: #FFFFFF;
+}
+
 * {
   box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
 }
 
 body, h1, h2, h3, h4, h5, p {
@@ -8,84 +17,32 @@ body, h1, h2, h3, h4, h5, p {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4, h5, p {
-  max-width: 800px;
-}
-
-h1 {
-  font-family: "adobe-garamond-pro", serif;
-  font-weight: 700;
-  font-size: 32px;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 32px;
-  letter-spacing: 0em;
-  line-height: 1em;
-  text-transform: none;
-  color: rgba(26,26,26,.9);
-  margin: 0 0 1rem;
-}
-
 h2 {
-  font-family: proxima-nova;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 14px;
-  letter-spacing: .1em;
-  line-height: 1.6em;
   text-transform: uppercase;
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: var(--black);
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--black);
 }
 
 p {
-  font-family: "proxima-nova",sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 16px;
-  letter-spacing: 0em;
-  line-height: 1.8em;
-  text-transform: none;
-  color: rgba(26,26,26,.75);
-  text-align: center;
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--gray);
   margin-top: .5rem;
 }
 
-a {
-  text-decoration: none;
-  color: #1a1a1a;
-  transition: color .15s ease-out;
-  padding-bottom: .05em;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(26,26,26,.3);
-  transition: border-color .15s ease-out,color .15s ease-out;
-
-  &:hover {
-    color: rgba(26,26,26,.6);
-    border-color: rgba(26,26,26,.15);
-  }
-}
-
-section, footer {
+section {
   width: 100%;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
-  background: white;
-}
-
-section:nth-child(even) {
-  background: #edeeef;
-}
-
-footer {
-  background-color: #26262a;
-  padding: 2rem;
-
-  p {
-    color: rgba(255,255,255,.4);
-    font-size: 0.75rem;
-    line-height: 1.6em;
-  }
+  background: var(--white);
 }

@@ -1,0 +1,29 @@
+.resume {
+    padding: 4rem 0;
+
+    &__navigation {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+        &__link {
+            display: block;
+            border: none;
+            background: var(--light-gray);
+            color: var(--black);
+            text-decoration: none;
+            font-size: 1.125rem;
+            text-transform: uppercase;
+            padding: 1rem 2rem;
+            cursor: pointer;
+
+            &--active, &:hover {
+                background: var(--black);
+                color: var(--white);
+            }
+        }
+    }
+    
+    &__content {
+        max-width: 640px;
+    }
+}

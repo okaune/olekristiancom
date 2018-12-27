@@ -1,0 +1,42 @@
+.contact {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 2rem 0;
+    background: var(--black);
+
+    &__header {
+        color: var(--white);
+    }
+
+    &__button {
+        display: block;
+        border: none;
+        background: var(--white);
+        color: var(--black);
+        text-decoration: none;
+        font-size: .875rem;
+        text-transform: uppercase;
+        padding: .5rem 1rem;
+        margin-left: 2rem;
+        cursor: pointer;
+        position: relative;
+        transition: transform .1s ease-in-out;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -4px;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            transition: transform .1s ease-in-out;
+        }
+        &:hover {
+            transform: scale(1.05);
+            &:after {
+                transform: scale(0.9);
+            }
+        }
+    }
+}

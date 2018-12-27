@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import '../styles/css/ResumeBlock.css';
+import '../styles/css/ResumeBlock.css'
 
 const ResumeBlock = props => (
   <div className="resume-block">

@@ -18,6 +18,7 @@ const middleware = [
 ];
 
 const rootReducer = combineReducers({
+  tab: 'education',
   cv: cvReducer
 });
 
