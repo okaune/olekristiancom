@@ -20,10 +20,18 @@
                 background: var(--black);
                 color: var(--white);
             }
+
+            &--active {
+                cursor: default;
+            }
         }
     }
     
     &__content {
         max-width: 640px;
+
+        &--small {
+            font-size: .75rem;
+        }
     }
 }

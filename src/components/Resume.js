@@ -24,7 +24,7 @@ const Resume = props => (
             </Tab>
             <Tab label="Teknologier">
                 <p>{props.cv.technologies.join(', ')}</p>
-                <p className="small">* Grunnleggende kunnskap</p>
+                <p className="resume__content--small">* Grunnleggende kunnskap</p>
             </Tab>
         </Tabs>
     </section>

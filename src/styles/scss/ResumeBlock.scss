@@ -1,48 +1,13 @@
 .resume-block {
   margin: 1rem 0;
-  width: 100%;
-  max-width: 800px;
-  display: grid;
-  grid-template-columns: 20% auto;
-  grid-template-rows: auto;
-  grid-template-areas: "period title location"
-                       "period description description";
 
-  @media (max-width: 540px) {
-    grid-template-areas: "location location period"
-                         "title title title"
-                         "description description description";
-  }
-
-  p {
-    max-width: 100%
-  }
-
-  &__period {
-    grid-area: period;
-    color: rgb(26, 26, 26);
-
-    @media (max-width: 540px) {
-      justify-self: end;
-    }
-  }
-
-  &__title {
-    grid-area: title;
-    color: rgb(26, 26, 26);
-  }
-
-  &__location {
-    grid-area: location;
-    justify-self: end;
-    color: rgb(26, 26, 26);
-
-    @media (max-width: 540px) {
-      justify-self: start;
-    }
+  &__pre {
+    font-size: .75rem;
+    color: var(--primary);
+    text-transform: uppercase;
   }
 
   &__description {
-    grid-area: description;
+    margin: 0;
   }
 }
