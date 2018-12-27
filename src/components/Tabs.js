@@ -13,7 +13,7 @@ class Tabs extends Component {
     // Toggle currently active tab
     handleTabClick(tabIndex) {
         this.setState({
-            activeTabIndex: tabIndex === this.state.activeTabIndex ? this.props.defaultActiveTabIndex : tabIndex
+            activeTabIndex: tabIndex
         });
     }
   
