@@ -27,7 +27,7 @@
       font-weight: 400;
       line-height: 1em;
       text-transform: uppercase;
-      color: #f0f0f0;
+      color: var(--light-gray);
       text-align: center;
   
       @media (max-width: 540px) {
@@ -41,6 +41,6 @@
       letter-spacing: 1px;
       line-height: 1.5em;
       text-transform: uppercase;
-      color: #f0f0f0;
+      color: var(--light-gray);
     }
   }
