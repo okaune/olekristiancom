@@ -5,30 +5,37 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/repo
     docker:
       - image: circleci/node:7.10
-    working_directory: ~/repo
     steps:
       - checkout
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      - run: yarn install
+      - run:
+          name: Install dependencies
+          command: yarn install
       - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn build
+      - save_cache:
+          key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - build
   deploy:
+    working_directory: ~/repo
     docker:
       - image: circleci/node:7.10
-    working_directory: ~/repo
     steps:
+      - restore_cache:
+          key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
       - add_ssh_keys:
-            fingerprints:
-              - "35:3b:27:78:5e:d7:c5:71:71:fd:a2:bc:2e:8d:3c:a0"
+          fingerprints:
+            - "35:3b:27:78:5e:d7:c5:71:71:fd:a2:bc:2e:8d:3c:a0"
       - run: ssh-keyscan -H login.domeneshop.no >> ~/.ssh/known_hosts 
       - run: scp -r build/* olekristian@login.domeneshop.no:~/www/
       
