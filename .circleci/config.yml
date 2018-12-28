@@ -26,6 +26,14 @@ jobs:
           key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
             - build
+  test:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:7.10
+    steps:
+      - restore_cache:
+          key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+      - run: CI=true yarn test
   deploy:
     working_directory: ~/repo
     docker:
@@ -44,6 +52,9 @@ workflows:
   build-test-and-approval-deploy:
     jobs:
       - build
-      - deploy:
+      - test:
           requires:
             - build
+      - deploy:
+          requires:
+            - test
