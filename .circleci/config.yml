@@ -31,8 +31,18 @@ jobs:
     docker:
       - image: circleci/node:7.10
     steps:
+      - checkout
       - restore_cache:
-          key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
       - run: CI=true yarn test
   deploy:
     working_directory: ~/repo
@@ -52,9 +62,8 @@ workflows:
   build-test-and-approval-deploy:
     jobs:
       - build
-      - test:
-          requires:
-            - build
+      - test
       - deploy:
           requires:
+            - build
             - test
