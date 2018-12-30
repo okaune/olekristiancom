@@ -1,12 +1,12 @@
 import React from 'react'
 
+import '../styles/css/Main.css'
+
 import Hero from '../components/Hero'
 import Contact from '../components/Contact'
 import About from '../components/About'
 import Resume from '../components/Resume'
 import Footer from '../components/Footer'
-
-import '../styles/css/Main.css'
 
 const Main = props => {
   return (

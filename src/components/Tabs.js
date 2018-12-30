@@ -39,14 +39,14 @@ class Tabs extends Component {
   
     render() {
         return (
-            <div className="tabs">
+            <React.Fragment>
                 <nav className="resume__navigation">
                     {this.renderChildrenWithTabsApiAsProps()}
                 </nav>
                 <div className="resume__content">
                     {this.renderActiveTabContent()}
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
