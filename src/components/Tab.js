@@ -6,7 +6,7 @@ const Tab = props => {
             onClick={(event) => {
                 event.preventDefault();
                 props.onClick(props.tabIndex);
-            }}>
+            }} tabIndex="0">
             {props.label}
         </a>
     )
