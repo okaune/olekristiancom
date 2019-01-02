@@ -7,7 +7,7 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:11.6.0
     steps:
       - checkout
       - restore_cache:
@@ -47,3 +47,7 @@ workflows:
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only:
+                - master

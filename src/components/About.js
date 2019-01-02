@@ -1,7 +1,7 @@
 import React from 'react'
 import differenceInYears from 'date-fns/difference_in_years'
 
-import '../styles/css/About.css'
+import '../styles/About.scss'
 
 const About = props => (
     <section className="about">

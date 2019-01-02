@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/css/Hero.css'
+import '../styles/Hero.scss'
 
 const Hero = props => (
     <section className="hero">

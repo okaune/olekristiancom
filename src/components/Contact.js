@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/css/Contact.css'
+import '../styles/Contact.scss'
 
 const Contact = props => (
     <section className="contact">
