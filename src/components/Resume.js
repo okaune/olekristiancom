@@ -6,7 +6,7 @@ import Tabs from '../components/Tabs'
 import Tab from '../components/Tab'
 import ResumeBlock from '../components/ResumeBlock'
 
-import '../styles/css/Resume.css'
+import '../styles/Resume.scss'
 
 const Resume = props => (
     <section className="resume">
