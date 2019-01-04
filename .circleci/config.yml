@@ -30,7 +30,7 @@ jobs:
   deploy:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:11.6.0
     steps:
       - restore_cache:
           key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -38,8 +38,8 @@ jobs:
           fingerprints:
             - "35:3b:27:78:5e:d7:c5:71:71:fd:a2:bc:2e:8d:3c:a0"
       - run: ssh-keyscan -H login.domeneshop.no >> ~/.ssh/known_hosts 
-      - run: sudo apt-get install rsync grsync
-      - run: rsync -au build/ olekristian@login.domeneshop.no:~/www/
+      - run: sudo apt-get update && sudo apt-get install rsync
+      - run: rsync -va --delete build/ olekristian@login.domeneshop.no:~/www/
       
 workflows:
   version: 2
