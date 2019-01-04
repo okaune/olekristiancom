@@ -1,6 +1,6 @@
 {
     "name": "Ole Kristian Aune",
-    "short_name": "Ole Kristian Aune",
+    "short_name": "Ole Kristian",
     "icons": [
         {
             "src": "/favicon/android-chrome-192x192.png?v=2",
@@ -10,6 +10,11 @@
         {
             "src": "/favicon/android-chrome-256x256.png?v=2",
             "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon/favicon-512x512.png?v=2",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
