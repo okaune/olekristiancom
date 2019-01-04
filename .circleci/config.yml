@@ -37,7 +37,7 @@ jobs:
           fingerprints:
             - "35:3b:27:78:5e:d7:c5:71:71:fd:a2:bc:2e:8d:3c:a0"
       - run: ssh-keyscan -H login.domeneshop.no >> ~/.ssh/known_hosts 
-      - run: scp -r build/* olekristian@login.domeneshop.no:~/www/
+      - run: rsync -au build/ olekristian@login.domeneshop.no:~/www/
       
 workflows:
   version: 2
