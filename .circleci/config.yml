@@ -11,16 +11,17 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: Restore Yarn Package Cache
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
+          - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
-          name: Install dependencies
-          command: yarn install
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
       - save_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - node_modules
+            - ~/.cache/yarn
       - run: yarn build
       - save_cache:
           key: v1-build-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
@@ -37,7 +38,7 @@ jobs:
           fingerprints:
             - "35:3b:27:78:5e:d7:c5:71:71:fd:a2:bc:2e:8d:3c:a0"
       - run: ssh-keyscan -H login.domeneshop.no >> ~/.ssh/known_hosts 
-      - run: sudo apt install rsync
+      - run: sudo apt-get install rsync grsync
       - run: rsync -au build/ olekristian@login.domeneshop.no:~/www/
       
 workflows:
