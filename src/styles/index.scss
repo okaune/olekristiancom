@@ -31,7 +31,6 @@
   --primary: #D42845;
   --black: #040404;
   --gray: #6B6B6B;
-  //--gray: #828282;
   --light-gray: #F0F0F0;
   --white: #FFFFFF;
 }
@@ -39,6 +38,10 @@
 * {
   box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
+}
+
+body {
+  background: var(--black);
 }
 
 body, h1, h2, h3, h4, h5, p {
