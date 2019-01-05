@@ -1,4 +1,4 @@
-const initialState = {
+export default {
   education: [
     {
       title: 'Norges Teknisk-Naturvitenskapelige Universitet',
@@ -72,13 +72,3 @@ const initialState = {
   ],
   languages: ['Norsk (Bokmål)', 'Engelsk']
 };
-
-const cvReducer = (state = initialState, action) => {
-  switch(action.type) {
-
-    default:
-      return state
-  }
-};
-
-export default cvReducer;

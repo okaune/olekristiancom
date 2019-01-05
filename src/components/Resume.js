@@ -1,6 +1,6 @@
 import React from 'react'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
+
+import { contextWrapper } from '../store/context';
 
 import Tabs from '../components/Tabs'
 import Tab from '../components/Tab'
@@ -30,13 +30,4 @@ const Resume = props => (
     </section>
 )
 
-const mapStateToProps = state => ({
-    cv: state.cv
-  });
-  
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
-
-export default connect(
-mapStateToProps,
-mapDispatchToProps
-)(Resume);
+export default contextWrapper(Resume);
