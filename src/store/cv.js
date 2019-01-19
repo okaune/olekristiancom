@@ -29,7 +29,7 @@ export default {
     {
       title: 'Konsulent',
       location: 'Kantega',
-      description: 'Full-stack utvikler på Kantega Singe Sign-on.',
+      description: 'Full-stack utvikler på Kantega Single Sign-on.',
       period: '2018-nå'
     },
     {
