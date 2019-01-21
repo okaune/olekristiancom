@@ -5,7 +5,7 @@ class Tabs extends Component {
         super(props, context);
         this.state = {
             activeTabIndex: this.props.defaultActiveTabIndex ? this.props.defaultActiveTabIndex : 0,
-            isMobile: false
+            isMobile: window.innerWidth <= 680
         };
         this.handleTabClick = this.handleTabClick.bind(this);
     }
