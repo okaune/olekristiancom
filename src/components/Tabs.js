@@ -1,14 +1,26 @@
 import React, {Component} from 'react'
 
 class Tabs extends Component {
-  
     constructor(props, context) {
         super(props, context);
         this.state = {
-            activeTabIndex: this.props.defaultActiveTabIndex ? this.props.defaultActiveTabIndex : 0
+            activeTabIndex: this.props.defaultActiveTabIndex ? this.props.defaultActiveTabIndex : 0,
+            isMobile: false
         };
         this.handleTabClick = this.handleTabClick.bind(this);
     }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowResize);
+      }
+    
+      componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowResize);
+      }
+
+    handleWindowResize = () => {
+        this.setState({ isMobile: window.innerWidth <= 680 });
+    }    
   
     // Toggle currently active tab
     handleTabClick(tabIndex) {
@@ -36,17 +48,41 @@ class Tabs extends Component {
             return children[activeTabIndex].props.children;
         }
     }
+
+    renderMobileContent() {
+        return React.Children.map(this.props.children, (child, index) => {
+            const button = React.cloneElement(child, {
+                disabled: true
+            })
+            return React.createElement(
+                'div', 
+                {
+                    className: 'resume__content--mobile'
+                }, 
+                [button, ...child.props.children]
+            )
+            
+        })
+    }
   
     render() {
+        const { isMobile } = this.state;
         return (
-            <React.Fragment>
-                <nav className="resume__navigation">
-                    {this.renderChildrenWithTabsApiAsProps()}
-                </nav>
-                <div className="resume__content">
-                    {this.renderActiveTabContent()}
-                </div>
-            </React.Fragment>
+            isMobile ?
+                (
+                    <React.Fragment>
+                        {this.renderMobileContent()}
+                    </React.Fragment>
+                ) : (
+                    <React.Fragment>
+                        <nav className="resume__navigation">
+                            {this.renderChildrenWithTabsApiAsProps()}
+                        </nav>
+                        <div className="resume__content">
+                            {this.renderActiveTabContent()}
+                        </div>
+                    </React.Fragment>
+                ) 
         );
     }
 }

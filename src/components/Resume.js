@@ -13,16 +13,16 @@ const Resume = props => (
         <h2 className="resume__header">Curriculum vitae</h2>
         <p>Her kan du se en liten oversikt over min utdanning og erfaring.</p>
         <Tabs>
-            <Tab label="Utdannelse">
+            <Tab label="Utdannelse" key="Utdannelse">
                 {props.cv.education.map((data, index) => <ResumeBlock key={index} data={data} />)}
             </Tab>
-            <Tab label="Arbeidserfaring">
+            <Tab label="Arbeidserfaring" key="Arbeidserfaring">
                 {props.cv.experience.map((data, index) => <ResumeBlock key={index} data={data} />)}
             </Tab>
-            <Tab label="Engasjement">
+            <Tab label="Engasjement" key="Engasjement">
                 {props.cv.involvement.map((data, index) => <ResumeBlock key={index} data={data} />)}
             </Tab>
-            <Tab label="Teknologier">
+            <Tab label="Teknologier" key="Teknologier">
                 <p>{props.cv.technologies.join(', ')}</p>
                 <p className="resume__content--small">* Grunnleggende kunnskap</p>
             </Tab>

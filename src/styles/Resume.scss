@@ -46,5 +46,20 @@
         &--small {
             font-size: .75rem;
         }
+
+        &--mobile {
+            width: 100%;
+            .resume__navigation__link {
+                width: 100%;
+                margin-top: 1rem;
+                padding: .5rem;
+
+                &:hover {
+                    background: var(--light-gray);
+                    color: var(--black);
+                    cursor: default;
+                }
+            }
+        }
     }
 }
