@@ -7,7 +7,6 @@ class Tabs extends Component {
             activeTabIndex: this.props.defaultActiveTabIndex ? this.props.defaultActiveTabIndex : 0,
             isMobile: window.innerWidth <= 680
         };
-        this.handleTabClick = this.handleTabClick.bind(this);
     }
 
     componentDidMount() {
@@ -19,13 +18,15 @@ class Tabs extends Component {
       }
 
     handleWindowResize = () => {
-        this.setState({ isMobile: window.innerWidth <= 680 });
+        this.setState({
+            isMobile: window.innerWidth <= 680
+        });
     }    
   
     // Toggle currently active tab
-    handleTabClick(tabIndex) {
+    handleTabClick(index) {
         this.setState({
-            activeTabIndex: tabIndex
+            activeTabIndex: index
         });
     }
   
@@ -33,8 +34,7 @@ class Tabs extends Component {
     renderChildrenWithTabsApiAsProps() {
         return React.Children.map(this.props.children, (child, index) => {
             return React.cloneElement(child, {
-                onClick : this.handleTabClick,
-                tabIndex: index,
+                onClick: this.handleTabClick.bind(this, index),
                 isActive: index === this.state.activeTabIndex
             });
         });
