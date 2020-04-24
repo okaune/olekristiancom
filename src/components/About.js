@@ -8,7 +8,7 @@ const About = props => (
     <section className="about">
         <div className="about__container">
             <div className="about__content">
-                <h2>Om meg!</h2>
+                <h2>Om meg</h2>
                 <p>
                     Jeg er en engasjert {differenceInYears(new Date(), new Date(1995, 4, 8))}-åring som for tiden kombinerer datateknologistiet ved NTNU med deltidsjobb som IT-konsulent hos Kantega.
                 </p>
