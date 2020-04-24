@@ -1,6 +1,6 @@
 import { differenceInYears } from 'date-fns'
 import React from 'react'
-import aboutImg from '../assets/images/about_picture.jpg'
+import aboutImg from '../assets/images/Ole Kristian Aune.jpg'
 import '../styles/About.scss'
 
 
