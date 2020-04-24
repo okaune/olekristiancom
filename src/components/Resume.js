@@ -1,16 +1,30 @@
-import React from 'react'
-
+import React from 'react';
+import styled from 'styled-components';
+import ResumeBlock from '../components/ResumeBlock';
+import Tab from '../components/Tab';
+import Tabs from '../components/Tabs';
 import { contextWrapper } from '../store/context';
 
-import Tabs from '../components/Tabs'
-import Tab from '../components/Tab'
-import ResumeBlock from '../components/ResumeBlock'
 
-import '../styles/Resume.scss'
+const ResumeSection = styled.section`
+    padding: 4rem 0;
+
+    @media (max-width: 680px) {
+        padding: 2rem 1rem;
+    }
+`
+
+const ResumeHeader = styled.h2`
+
+`
+
+const ResumeSmallText = styled.p`
+    font-size: .75rem;
+`
 
 const Resume = props => (
-    <section className="resume">
-        <h2 className="resume__header">Curriculum vitae</h2>
+    <ResumeSection>
+        <ResumeHeader>Curriculum vitae</ResumeHeader>
         <p>Her kan du se en liten oversikt over min utdanning og erfaring.</p>
         <Tabs>
             <Tab label="Utdannelse" key="Utdannelse">
@@ -24,10 +38,10 @@ const Resume = props => (
             </Tab>
             <Tab label="Teknologier" key="Teknologier">
                 <p>{props.cv.technologies.join(', ')}</p>
-                <p className="resume__content--small">* Grunnleggende kunnskap</p>
+                <ResumeSmallText>* Grunnleggende kunnskap</ResumeSmallText>
             </Tab>
         </Tabs>
-    </section>
+    </ResumeSection>
 )
 
 export default contextWrapper(Resume);

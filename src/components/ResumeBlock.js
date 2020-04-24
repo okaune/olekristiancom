@@ -1,29 +1,45 @@
 import React from 'react'
+import styled from 'styled-components'
 
-import '../styles/ResumeBlock.scss'
+
+const ResumeBlockWrapper = styled.div`
+  margin: 1rem 0;
+`
+
+const ResumeBlockPre = styled.p`
+  font-size: .75rem;
+  color: var(--primary);
+  text-transform: uppercase;
+`
+
+const ResumeBlockTitle = styled.h3``
+
+const ResumeBlockDescription = styled.p`
+  margin: 0;
+`
 
 const ResumeBlock = props => (
-  <div className="resume-block">
+  <ResumeBlockWrapper>
     {(props.data.location || props.data.period) &&
-      <p className="resume-block__pre">
+      <ResumeBlockPre>
         {props.data.location}
-        {props.data.location && 
-          props.data.period && 
+        {props.data.location &&
+          props.data.period &&
           <React.Fragment>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;&nbsp;</React.Fragment>}
         {props.data.period}
-      </p>
+      </ResumeBlockPre>
     }
     {props.data.title &&
-      <h3 className="resume-block__title">
+      <ResumeBlockTitle>
         {props.data.title}
-      </h3>
+      </ResumeBlockTitle>
     }
     {props.data.description &&
-      <p className="resume-block__description">
+      <ResumeBlockDescription>
         {props.data.description}
-      </p>
+      </ResumeBlockDescription>
     }
-  </div>
+  </ResumeBlockWrapper>
 )
 
 export default ResumeBlock;
