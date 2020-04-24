@@ -1,7 +1,7 @@
+import { getYear } from 'date-fns'
 import React from 'react'
-import getYear from 'date-fns/get_year'
-
 import '../styles/Footer.scss'
+
 
 const Footer = props => (
     <footer className="footer">

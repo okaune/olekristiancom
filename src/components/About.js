@@ -1,7 +1,8 @@
+import { differenceInYears } from 'date-fns'
 import React from 'react'
-import differenceInYears from 'date-fns/difference_in_years'
-
+import aboutImg from '../assets/images/about_picture.jpg'
 import '../styles/About.scss'
+
 
 const About = props => (
     <section className="about">
@@ -9,7 +10,7 @@ const About = props => (
             <div className="about__content">
                 <h2>Om meg</h2>
                 <p>
-                Jeg er en engasjert {differenceInYears(new Date(), new Date(1995, 4, 8))}-åring som for tiden kombinerer datateknologistiet ved NTNU med deltidsjobb som IT-konsulent hos Kantega.
+                    Jeg er en engasjert {differenceInYears(new Date(), new Date(1995, 4, 8))}-åring som for tiden kombinerer datateknologistiet ved NTNU med deltidsjobb som IT-konsulent hos Kantega.
                 </p>
                 <ul>
                     <li>
@@ -23,10 +24,10 @@ const About = props => (
                 </ul>
             </div>
             <div className="about__image">
-                <img src={require('../assets/images/about_picture.jpg')} alt=""/>
+                <img src={aboutImg} alt="" />
             </div>
         </div>
-        
+
     </section>
 )
 
