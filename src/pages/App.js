@@ -84,6 +84,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const App = () => {
+  // eslint-disable-next-line
   const [state, setState] = useState({
     tab: 'education',
     cv: cvReducer
