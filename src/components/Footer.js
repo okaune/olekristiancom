@@ -13,12 +13,31 @@ const FooterSection = styled.footer`
 
 const FooterLinks = styled.p`
     color: var(--white);
+    z-index: 1;
     a {
         color: var(--white);
+        background: var(--black);
         text-decoration: underline;
+        position: relative;
         &:hover {
             color: var(--white);
             text-decoration: none;
+        }
+
+        &:focus {
+            outline: none;
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: -.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1.25rem;
+                height: 120%;
+                border: 4px solid var(--primary);
+                z-index: -1;
+            }
         }
     }
 `

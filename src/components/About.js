@@ -96,7 +96,7 @@ const About = () => (
             <AboutContent>
                 <h2>Om meg</h2>
                 <p>
-                    Jeg er en engasjert {differenceInYears(new Date(), new Date(1995, 4, 8))}-åring som for tiden kombinerer datateknologistiet ved NTNU med deltidsjobb som IT-konsulent hos Kantega.
+                    Jeg er en engasjert {differenceInYears(new Date(), new Date("1995-04-08"))}-åring som for tiden kombinerer datateknologistiet ved NTNU med deltidsjobb som IT-konsulent hos Kantega.
                 </p>
                 <AboutList>
                     <AboutListItem>

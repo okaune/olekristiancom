@@ -53,6 +53,11 @@ const ContactLink = styled.a`
             transform: scale(0.9);
         }
     }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px var(--primary);
+    }
 `
 
 const Contact = () => (
