@@ -50,7 +50,7 @@ const HeroSubtitle = styled.h2`
     color: var(--light-gray);
 `
 
-const Hero = props => (
+const Hero = () => (
     <HeroSection>
         <HeroSubtitle>Dataingeniør</HeroSubtitle>
         <HeroTitle>Ole Kristian Aune</HeroTitle>

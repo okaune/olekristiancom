@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import About from '../components/About';
@@ -6,7 +6,6 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Resume from '../components/Resume';
-import { Provider } from '../store/context';
 import cvReducer from '../store/cv';
 
 const fontFace = (name, src, fontWeight = 'normal', fontStyle = 'normal') => {
@@ -83,28 +82,17 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-const App = () => {
-  // eslint-disable-next-line
-  const [state, setState] = useState({
-    tab: 'education',
-    cv: cvReducer
-  })
-
-  return (
-    <Provider value={state}>
-      <GlobalStyle />
-      <Router>
-        <div className="App">
-          <Hero />
-          <Contact />
-          <About />
-          <Resume />
-          <Footer />
-        </div>
-      </Router>
-    </Provider>
-  )
-}
-
+const App = () => (
+  <Router>
+    <GlobalStyle />
+    <div className="App">
+      <Hero />
+      <Contact />
+      <About />
+      <Resume cv={cvReducer} />
+      <Footer />
+    </div>
+  </Router>
+)
 
 export default App;

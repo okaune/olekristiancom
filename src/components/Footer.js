@@ -28,7 +28,7 @@ const FooterCopyright = styled.p`
     font-size: .875rem;
 `
 
-const Footer = props => (
+const Footer = () => (
     <FooterSection>
         <FooterLinks>
             <a href="mailto:post@olekristian.com">E-post</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/ole.kristian.aune">Facebook</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/olekristianaune/">LinkedIn</a>&nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;&nbsp;<a href="https://github.com/okaune">GitHub</a>

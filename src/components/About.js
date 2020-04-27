@@ -90,7 +90,7 @@ const AboutImage = styled.img`
 `
 
 
-const About = props => (
+const About = () => (
     <AboutSection>
         <AboutContainer>
             <AboutContent>

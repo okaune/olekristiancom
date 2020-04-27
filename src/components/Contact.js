@@ -55,7 +55,7 @@ const ContactLink = styled.a`
     }
 `
 
-const Contact = props => (
+const Contact = () => (
     <ContactSection>
         <ContactHeader>Noe du lurer på?</ContactHeader>
         <ContactLink href="mailto:post@olekristian.com">Kontakt meg</ContactLink>
