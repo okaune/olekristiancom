@@ -6,23 +6,36 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Resume from '../components/Resume';
-import cvReducer from '../store/cv';
+import cv from '../store/cv';
 
-const fontFace = (name, src, fontWeight = 'normal', fontStyle = 'normal') => {
-  return `
+const fontFace = (
+    name: string,
+    src: string,
+    fontWeight: string | number = 'normal',
+    fontStyle = 'normal'
+) => {
+    return `
       @font-face{
           font-family: "${name}";
           src: url(${require('../assets/fonts/' + src + '.eot')});
-          src: url(${require('../assets/fonts/' + src + '.eot')}?#iefix) format("embedded-opentype"),
-               url(${require('../assets/fonts/' + src + '.woff')}) format("woff"),
-               url(${require('../assets/fonts/' + src + '.ttf')}) format("truetype"),
-               url(${require('../assets/fonts/' + src + '.svg')}#${name}) format("svg");
+          src: url(${require('../assets/fonts/' +
+              src +
+              '.eot')}?#iefix) format("embedded-opentype"),
+               url(${require('../assets/fonts/' +
+                   src +
+                   '.woff')}) format("woff"),
+               url(${require('../assets/fonts/' +
+                   src +
+                   '.ttf')}) format("truetype"),
+               url(${require('../assets/fonts/' +
+                   src +
+                   '.svg')}#${name}) format("svg");
           font-display: swap;
           font-style: ${fontStyle};
           font-weight: ${fontWeight};
       }
-  `
-}
+  `;
+};
 
 const GlobalStyle = createGlobalStyle`
     ${fontFace('Oswald', 'oswald-v16-latin-300', 300)}
@@ -80,19 +93,19 @@ const GlobalStyle = createGlobalStyle`
       justify-content: center;
       background: var(--white);
     }
-`
+`;
 
 const App = () => (
-  <Router>
-    <GlobalStyle />
-    <div className="App">
-      <Hero />
-      <Contact />
-      <About />
-      <Resume cv={cvReducer} />
-      <Footer />
-    </div>
-  </Router>
-)
+    <Router>
+        <GlobalStyle />
+        <div className="App">
+            <Hero />
+            <Contact />
+            <About />
+            <Resume cv={cv} />
+            <Footer />
+        </div>
+    </Router>
+);
 
 export default App;

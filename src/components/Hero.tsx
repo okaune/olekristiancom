@@ -1,17 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import backgroundImage from '../assets/images/background.jpg'
+import React from 'react';
+import styled from 'styled-components';
+import backgroundImage from '../assets/images/background.jpg';
 
 const HeroSection = styled.section`
     min-height: 400px;
     overflow: hidden;
     position: relative;
     background: transparent;
-  
+
     @media (max-width: 540px) {
-      min-height: 300px;
+        min-height: 300px;
     }
-  
+
     &::before {
         content: '';
         position: fixed;
@@ -19,13 +19,14 @@ const HeroSection = styled.section`
         height: 100%;
         top: 0;
         left: 0;
-        background: var(--primary) url(${backgroundImage}) no-repeat center center;
+        background: var(--primary) url(${backgroundImage}) no-repeat center
+            center;
         background-blend-mode: multiply;
         background-size: cover;
         will-change: transform;
         z-index: -1;
     }
-`
+`;
 
 const HeroTitle = styled.h1`
     font-size: 4.5rem;
@@ -36,10 +37,10 @@ const HeroTitle = styled.h1`
     text-align: center;
 
     @media (max-width: 540px) {
-    font-size: 3.5rem;
-    padding: 0 1rem;
+        font-size: 3.5rem;
+        padding: 0 1rem;
     }
-`
+`;
 
 const HeroSubtitle = styled.h2`
     font-size: 1.125rem;
@@ -48,13 +49,13 @@ const HeroSubtitle = styled.h2`
     line-height: 1.5em;
     text-transform: uppercase;
     color: var(--light-gray);
-`
+`;
 
 const Hero = () => (
     <HeroSection>
         <HeroSubtitle>Dataingeniør</HeroSubtitle>
         <HeroTitle>Ole Kristian Aune</HeroTitle>
     </HeroSection>
-)
+);
 
-export default Hero
+export default React.memo(Hero);

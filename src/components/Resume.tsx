@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import ResumeBlock from '../components/ResumeBlock';
-import Tabs, { Tab } from '../components/Tabs';
-
+import { cv } from '../store/cv';
+import ResumeBlock from './ResumeBlock';
+import Tabs, { Tab } from './Tabs';
 
 const ResumeSection = styled.section`
     padding: 4rem 0;
@@ -10,29 +10,33 @@ const ResumeSection = styled.section`
     @media (max-width: 680px) {
         padding: 2rem 1rem;
     }
-`
+`;
 
-const ResumeHeader = styled.h2`
-
-`
+const ResumeHeader = styled.h2``;
 
 const ResumeSmallText = styled.p`
-    font-size: .75rem;
-`
+    font-size: 0.75rem;
+`;
 
-const Resume = ({ cv }) => (
+const Resume: React.FC<{ cv: cv }> = ({ cv }) => (
     <ResumeSection>
         <ResumeHeader>Curriculum vitae</ResumeHeader>
         <p>Her kan du se en liten oversikt over min utdanning og erfaring.</p>
         <Tabs>
             <Tab label="Utdannelse" key="Utdannelse">
-                {cv.education.map((data, index) => <ResumeBlock key={index} data={data} />)}
+                {cv.education.map((data, index) => (
+                    <ResumeBlock key={index} data={data} />
+                ))}
             </Tab>
             <Tab label="Arbeidserfaring" key="Arbeidserfaring">
-                {cv.experience.map((data, index) => <ResumeBlock key={index} data={data} />)}
+                {cv.experience.map((data, index) => (
+                    <ResumeBlock key={index} data={data} />
+                ))}
             </Tab>
             <Tab label="Engasjement" key="Engasjement">
-                {cv.involvement.map((data, index) => <ResumeBlock key={index} data={data} />)}
+                {cv.involvement.map((data, index) => (
+                    <ResumeBlock key={index} data={data} />
+                ))}
             </Tab>
             <Tab label="Teknologier" key="Teknologier">
                 <p>{cv.technologies.join(', ')}</p>
@@ -40,6 +44,6 @@ const Resume = ({ cv }) => (
             </Tab>
         </Tabs>
     </ResumeSection>
-)
+);
 
-export default Resume;
+export default React.memo(Resume);
