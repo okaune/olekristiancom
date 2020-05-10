@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { useMediaPredicate } from 'react-media-hook';
 import styled from 'styled-components';
 
@@ -53,17 +53,19 @@ const TabContentMobile = styled.div`
     }
 `;
 
-export const Tab: React.FC<{ label: string }> = ({ label }) => null;
+interface TabProps {
+    label: string;
+}
 
-const Tabs: React.FC<{
-    children: React.ReactElement[] | React.ReactElement;
-}> = ({ children }) => {
+export const Tab: React.FC<TabProps> = ({ label }) => null;
+
+const Tabs: React.FC = ({ children }) => {
     let child: React.ReactElement<{ label: string }> | null = null;
     if (children) {
         if (Array.isArray(children)) {
             child = children[0] as React.ReactElement;
         } else {
-            child = children as ReactElement;
+            child = children as React.ReactElement;
         }
     }
 
@@ -78,34 +80,40 @@ const Tabs: React.FC<{
     return isMobile ? (
         <>
             <TabContentMobile>
-                {React.Children.map(
-                    children,
-                    (child: ReactElement<{ label: string }>) => (
-                        <Fragment key={child.props.label}>
-                            <TabButton key={child.props.label} disabled>
-                                {child.props.label}
+                {React.Children.map(children, (child) => {
+                    if (!child) return;
+                    const {
+                        props: { label },
+                    } = child as React.ReactElement<{ label: string }>;
+                    return (
+                        <Fragment key={label}>
+                            <TabButton key={label} disabled>
+                                {label}
                             </TabButton>
                             {children}
                         </Fragment>
-                    )
-                )}
+                    );
+                })}
             </TabContentMobile>
         </>
     ) : (
         <>
             <TabNavigation>
-                {React.Children.map(
-                    children,
-                    (child: ReactElement<{ label: string }>) => (
+                {React.Children.map(children, (child) => {
+                    if (!child) return;
+                    const {
+                        props: { label },
+                    } = child as React.ReactElement<{ label: string }>;
+                    return (
                         <TabButton
-                            isActive={activeTab === child.props.label}
-                            label={child.props.label}
-                            key={child.props.label}
-                            onClick={() => onClickTabItem(child.props.label)}>
-                            {child.props.label}
+                            isActive={activeTab === label}
+                            label={label}
+                            key={label}
+                            onClick={() => onClickTabItem(label)}>
+                            {label}
                         </TabButton>
-                    )
-                )}
+                    );
+                })}
             </TabNavigation>
             <TabContent>
                 {

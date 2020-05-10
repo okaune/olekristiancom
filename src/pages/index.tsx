@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import About from '../components/About';
 import Contact from '../components/Contact';
@@ -95,8 +94,8 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const App = () => (
-    <Router>
+const App: React.FC = () => (
+    <>
         <GlobalStyle />
         <div className="App">
             <Hero />
@@ -105,7 +104,7 @@ const App = () => (
             <Resume cv={cv} />
             <Footer />
         </div>
-    </Router>
+    </>
 );
 
 export default App;

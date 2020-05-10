@@ -18,7 +18,11 @@ const ResumeSmallText = styled.p`
     font-size: 0.75rem;
 `;
 
-const Resume: React.FC<{ cv: cv }> = ({ cv }) => (
+interface Props {
+    cv: cv;
+}
+
+const Resume: React.FC<Props> = ({ cv }) => (
     <ResumeSection>
         <ResumeHeader>Curriculum vitae</ResumeHeader>
         <p>Her kan du se en liten oversikt over min utdanning og erfaring.</p>

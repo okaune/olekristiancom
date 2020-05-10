@@ -1,7 +1,7 @@
 import { differenceInYears } from 'date-fns';
 import React from 'react';
 import styled from 'styled-components';
-import aboutImg from '../assets/images/Ole Kristian Aune.jpg';
+import aboutImg from '../assets/images/Ole_Kristian_Aune.jpg';
 
 const AboutSection = styled.section`
     display: flex;
@@ -94,7 +94,7 @@ const AboutImage = styled.img`
     }
 `;
 
-const About = () => (
+const About: React.FC = () => (
     <AboutSection>
         <AboutContainer>
             <AboutContent>

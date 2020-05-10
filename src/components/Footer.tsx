@@ -47,7 +47,7 @@ const FooterCopyright = styled.p`
     font-size: 0.875rem;
 `;
 
-const Footer = () => (
+const Footer: React.FC = () => (
     <FooterSection>
         <FooterLinks>
             <a href="mailto:post@olekristian.com">E-post</a>

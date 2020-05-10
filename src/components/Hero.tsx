@@ -51,7 +51,7 @@ const HeroSubtitle = styled.h2`
     color: var(--light-gray);
 `;
 
-const Hero = () => (
+const Hero: React.FC = () => (
     <HeroSection>
         <HeroSubtitle>Dataingeniør</HeroSubtitle>
         <HeroTitle>Ole Kristian Aune</HeroTitle>

@@ -60,7 +60,7 @@ const ContactLink = styled.a`
     }
 `;
 
-const Contact = () => (
+const Contact: React.FC = () => (
     <ContactSection>
         <ContactHeader>Noe du lurer på?</ContactHeader>
         <ContactLink href="mailto:post@olekristian.com">

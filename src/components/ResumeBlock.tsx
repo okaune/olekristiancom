@@ -24,26 +24,28 @@ interface dataProps {
     description?: string;
 }
 
-const ResumeBlock: React.FC<{ data: dataProps }> = (props) => (
+interface Props {
+    data: dataProps;
+}
+
+const ResumeBlock: React.FC<Props> = ({
+    data: { location, period, title, description },
+}) => (
     <ResumeBlockWrapper>
-        {(props.data.location || props.data.period) && (
+        {(location || period) && (
             <ResumeBlockPre>
-                {props.data.location}
-                {props.data.location && props.data.period && (
+                {location}
+                {location && period && (
                     <React.Fragment>
                         &nbsp;&nbsp;&nbsp;&middot;&nbsp;&nbsp;&nbsp;
                     </React.Fragment>
                 )}
-                {props.data.period}
+                {period}
             </ResumeBlockPre>
         )}
-        {props.data.title && (
-            <ResumeBlockTitle>{props.data.title}</ResumeBlockTitle>
-        )}
-        {props.data.description && (
-            <ResumeBlockDescription>
-                {props.data.description}
-            </ResumeBlockDescription>
+        {title && <ResumeBlockTitle>{title}</ResumeBlockTitle>}
+        {description && (
+            <ResumeBlockDescription>{description}</ResumeBlockDescription>
         )}
     </ResumeBlockWrapper>
 );

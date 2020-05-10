@@ -11,6 +11,10 @@
 # production
 /build
 
+# gatsby
+.cache/
+public/page-data/
+
 # misc
 .DS_Store
 .env.local
