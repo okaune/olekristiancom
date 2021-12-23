@@ -27,13 +27,13 @@ const Resume: React.FC<Props> = ({ cv }) => (
         <ResumeHeader>Curriculum vitae</ResumeHeader>
         <p>Her kan du se en liten oversikt over min utdanning og erfaring.</p>
         <Tabs>
-            <Tab label="Utdannelse" key="Utdannelse">
-                {cv.education.map((data, index) => (
+        <Tab label="Arbeidserfaring" key="Arbeidserfaring">
+                {cv.experience.map((data, index) => (
                     <ResumeBlock key={index} data={data} />
                 ))}
             </Tab>
-            <Tab label="Arbeidserfaring" key="Arbeidserfaring">
-                {cv.experience.map((data, index) => (
+            <Tab label="Utdannelse" key="Utdannelse">
+                {cv.education.map((data, index) => (
                     <ResumeBlock key={index} data={data} />
                 ))}
             </Tab>

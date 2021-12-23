@@ -25,7 +25,7 @@ export default {
             title: 'Norges Teknisk-Naturvitenskapelige Universitet',
             description: 'Datateknologi, Master',
             location: 'Trondheim',
-            period: '2018-nå',
+            period: '2018-2020',
         },
         {
             title: 'Norges Teknisk-Naturvitenskapelige Universitet',
@@ -50,7 +50,7 @@ export default {
         {
             title: 'Konsulent',
             location: 'Kantega',
-            description: 'Full-stack utvikler på Kantega Single Sign-on.',
+            description: 'Tech lead hos Kantega Single Sign-on.',
             period: '2018-nå',
         },
         {
@@ -77,13 +77,13 @@ export default {
     ],
     involvement: [
         {
-            title: 'Promoteringsansvarlig (Styreverv) i TIHLDE Linjeforening',
-            period: '2017',
-        },
-        {
             title:
                 'Promoteringsansvarlig (Styreverv) i Sukkerhuset Kjeller & Scene',
-            period: '2015-2017',
+            period: '2015-2017, 2019-2020',
+        },
+        {
+            title: 'Promoteringsansvarlig (Styreverv) i TIHLDE Linjeforening',
+            period: '2017',
         },
         {
             title: 'Promotering- og webansvarlig for Nadderudrevyen',
@@ -93,8 +93,9 @@ export default {
     technologies: [
         'Java',
         'CSS/SCSS',
-        'JavaScript/ES6',
+        'JavaScript',
         'React',
+        'NodeJS',
         'Redux',
         'HTML',
         'WordPress/PHP',
@@ -105,6 +106,10 @@ export default {
         'Responsivt Design',
         'Agile Metoder',
         'Mob-programmering',
+        'Velocity',
+        'Atlassian Jira',
+        'Atlassian Confluence',
+        'Atlassian Bitbucket'
     ],
     languages: ['Norsk (Bokmål)', 'Engelsk'],
 };

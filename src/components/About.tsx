@@ -1,4 +1,3 @@
-import { differenceInYears } from 'date-fns';
 import React from 'react';
 import styled from 'styled-components';
 import aboutImg from '../assets/images/Ole_Kristian_Aune.jpg';
@@ -21,6 +20,7 @@ const AboutSection = styled.section`
 
 const AboutContainer = styled.div`
     max-width: 1000px;
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     padding: 5rem 1rem;
@@ -94,38 +94,31 @@ const AboutImage = styled.img`
     }
 `;
 
-const About: React.FC = () => (
+const About = () => (
     <AboutSection>
         <AboutContainer>
             <AboutContent>
                 <h2>Om meg</h2>
                 <p>
-                    Jeg er en engasjert{' '}
-                    {differenceInYears(new Date(), new Date('1995-04-08'))}
-                    -åring som for tiden kombinerer datateknologistiet ved NTNU
-                    med deltidsjobb som IT-konsulent hos Kantega.
+                    Engasjert og nysgjerring full-stack utvikler og medeier i Kantega.
                 </p>
+                
                 <AboutList>
+                { false && <>
                     <AboutListItem>
-                        <h3>Datainteresse</h3>
+                        <h3>Punkt 1</h3>
                         <p>
-                            Fra jeg var liten har jeg vært fasinert av
-                            datamaskiner og hvordan de fungerer. Dette førte til
-                            en interesse for programmering, og jeg laget min
-                            første nettside da jeg gikk i 6. klasse. Derfra har
-                            interessen bare økt, og jeg prøver aktivt å holde
-                            meg oppdatert på alt det nye som skjer i bransjen.
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat quidem incidunt itaque, magni inventore ducimus ratione impedit ipsam eligendi. Pariatur ad id molestiae natus obcaecati magni repellendus sed ratione ipsam!
                         </p>
                     </AboutListItem>
                     <AboutListItem>
-                        <h3>Studentfrivillighet</h3>
+                        <h3>Punkt 2</h3>
                         <p>
-                            Gjennom studietiden har jeg engasjert meg i flere
-                            organisasjoner og innehatt diverse verv. Blandt
-                            annet har jeg sittet i styret i studentpuben
-                            Sukkerhuset og linjeforeningen TIHLDE.
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo dignissimos, voluptas mollitia, explicabo cumque tempore dolore vero saepe sunt nulla dolorem iste natus ex laborum quidem, reprehenderit architecto autem qui?
                         </p>
                     </AboutListItem>
+                    </>
+                    }
                 </AboutList>
             </AboutContent>
             <AboutImageWrapper>
@@ -133,6 +126,6 @@ const About: React.FC = () => (
             </AboutImageWrapper>
         </AboutContainer>
     </AboutSection>
-);
+)
 
-export default React.memo(About);
+export default About;

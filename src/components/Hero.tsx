@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import backgroundImage from '../assets/images/background.jpg';
+import backgroundImage from '../assets/images/background.png';
 
 const HeroSection = styled.section`
     min-height: 400px;
